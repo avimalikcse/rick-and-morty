@@ -1,0 +1,379 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* VARIABLES */
+
+:root {
+    --main-color: #1a8fff;
+    --text-color: #777;
+    --text-color-light: #ccc;
+    --border-color: #eee;
+    --bg-color: #f9f9f9;
+    --neutral-color: #fff;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+    50%,
+    100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+    color: darkred;
+}
+
+.bg {
+    /* The image used */
+    background-image: url('./assets/images/bg.jpg');
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.siteHeader {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: bold;
+    background: antiquewhite;
+    opacity: .8;
+    width: 100%;
+}
+
+.icon {
+    font-family: 'Material Icons', serif;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: var(--bg-color);
+    position: relative;
+}
+
+header {
+    display: block;
+    width: 100%;
+    padding: 1.75em 0;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--neutral-color);
+}
+
+header #logo {
+    font-size: 175%;
+    text-align: center;
+    color: var(--main-color);
+    line-height: 1;
+}
+
+header #logo .icon {
+    padding-right: .25em;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5em;
+    max-width: 50em;
+}
+
+
+/* GRID */
+
+.row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.dlRow {
+    text-align: center;
+}
+
+.row-middle {
+    align-items: center;
+}
+
+.container h4 {
+    text-align: center;
+}
+
+.row .col {
+    flex-grow: 0;
+    flex-basis: calc(100%/4);
+    width: calc(100%/4);
+}
+
+.dlRow .col {
+    flex-grow: 0;
+    flex-basis: calc(100%/2);
+    width: calc(100%/2);
+}
+
+.col {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+}
+
+.col-start {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.col-center {
+    justify-content: center;
+    text-align: center;
+}
+
+.col-end {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.body .disabled {
+    color: var(--text-color-light);
+    pointer-events: none;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    background: lightgreen;
+    color: black;
+    margin: 2%;
+    padding: 1%;
+    height: 98%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+dl {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination span {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination span.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination span:hover:not(.active) {
+    background-color: #ddd;
+}
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+
+/* The popup form - hidden by default */
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+
+/* Add styles to the form container */
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+/* When the inputs get focus, do something */
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit/login button */
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.episodeList {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.card img {
+    width: 74%;
+    margin-left: 17%;
+}
+
+@media only screen and (max-width: 600px) {
+    .bg {
+        /* The image used */
+        background-image: url('./assets/images/bg-mobile.jpg');
+    }
+    .row .col {
+        flex-grow: 0;
+        flex-basis: calc(100%/2);
+        width: calc(100%/2);
+    }
+    .pagination {
+        overflow: scroll;
+        justify-content: end;
+    }
+}
